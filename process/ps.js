@@ -30,9 +30,19 @@ exports.GetPID = function(pName, callback) {
     }
 };
 
-exports.Kill = function(pid) {
+exports.KillByPid = function(pid) {
     if (IS_WIN) {
         var cmd = 'taskkill /F /PID '+pid;
+        var exec = require('child_process').exec;
+        exec(cmd, function(err, stdout, stderr) {
+        });
+    }
+
+};
+
+exports.KillByName = function(name) {
+    if (IS_WIN) {
+        var cmd = 'taskkill /F /IM '+name;
         var exec = require('child_process').exec;
         exec(cmd, function(err, stdout, stderr) {
         });
