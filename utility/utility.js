@@ -46,3 +46,16 @@ function RemoveFolder(folderPath) {
     } catch(e) {
     }
 }
+
+function CheckPortOpen(protocol, port) {
+    var command = '';
+
+    //windows platform
+    if (process.platform === 'win32') {
+        command = 'netstat -nao | find "'+protocol+'" | find ":'+port+'"';
+        const exec = child_process.exec;
+        exec(command, function(error, stdout, stderr) {
+            console.log(stdout);
+        });
+    }
+}
