@@ -47,6 +47,31 @@ function RemoveFolder(folderPath) {
     }
 }
 
+function CopyFolder(source, target) {
+    var path = require('path');
+    var fs = require('fs');
+
+    try {
+        fs.mkdirSync(target);
+        var fileList = fs.readdirSync(source);
+
+        for (var j = 0; j < fileList.length; ++j) {
+            var sourceFile = path.join(source, fileList[j]);
+            var targetFile = path.join(target, fileList[j]);
+            var stat = fs.statSync(sourceFile);
+
+            if (stat && stat.isDirectory()){
+                //mkdir folder
+                CopyFolder(sourceFile, targetFile);
+            } else {
+                //copy file
+                fs.writeFileSync(targetFile, fs.readFileSync(sourceFile, 'utf-8'), 'utf-8');
+            }
+        }
+    } catch(e) {
+    }
+}
+
 function CheckPortOpen(protocol, port) {
     var command = '';
 
@@ -54,7 +79,17 @@ function CheckPortOpen(protocol, port) {
     if (process.platform === 'win32') {
         command = 'netstat -nao | find "'+protocol+'" | find ":'+port+'"';
         const exec = child_process.exec;
-        exec(command, function(error, stdout, stderr) {
+        exec(command, function(error, stdout) {
+            console.log(stdout);
+        });
+    } else {
+        if (protocol === 'UDP') {
+            command = 'netstat -nu | grep ":'+port+'"';
+        } else {
+            command = 'netstat -nt | grep ":'+port+'"';
+        }
+
+        exec(command, function(error, stdout) {
             console.log(stdout);
         });
     }
