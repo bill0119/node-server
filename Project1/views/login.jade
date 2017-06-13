@@ -1,0 +1,32 @@
+doctype html
+
+html
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		title node-server
+		link(href='/stylesheets/style.css', rel='stylesheet')
+		script(type="text/javascript", src="/javascripts/jquery.min.js")
+	body
+		div(id="wrapper")
+			div.loginContainer(id="login_content")
+				block content
+					div
+						img(src="" width="340px" height="67px " border="0px")
+					div.loginTable
+						table.searchTable
+							tr.setHeight50
+								td.setWidth80 Account :
+								td.setWidth160
+									input(id="account" type="text" value="" size="16" style="width:140px")
+							tr.setHeight50
+								td.setWidth80 Password :
+								td.setWidth160
+									input(id="password" type="password" value="" size="16" style="width:140px")
+						table.searchTable
+							tr.setHeight50
+								td.setWidth100
+									input(id="loginBT" type="button" value="Login" style="width:80px" onclick="")
+					div(id="LoginMessageDiv" style="display:none")
+						div(id="loginMessage")

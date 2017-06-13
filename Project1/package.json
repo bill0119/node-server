@@ -1,0 +1,35 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "node-server",
+        "scope": null,
+        "escapedName": "node-server",
+        "name": "node-server",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      }    ]
+  ],
+  "author": {
+    "name": "Bill Li",
+    "url": ""
+  },
+  "bundleDependencies": [
+    "sqlite3",
+	"body-parser",
+	"cheerio",
+	"cookie-parser",
+	"express",
+	"jade",
+	"morgan",
+	"nodepanic",
+	"q"
+  ],
+  "contributors": [
+  ],
+  "license": "MIT",
+  "name": "node-server",
+  "optionalDependencies": {},
+  "version": "1.0.0"
+}
