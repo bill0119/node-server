@@ -1,14 +1,6 @@
-/************************************************************
- Copyright (C) Delta Network, Inc., 2015
- Licensee Delta Network, Inc., 2015
-
- FILE NAME : BinaryTreeSQLite.js
- AUTHOR : Bill Li
- MODULE NAME : BinaryTreeSQLite.js
- TARGET ENVIRONMENT :
- DATE OF FIRST RELEASE :
- DESCRIPTION : Generate binary tree node.
- ************************************************************/
+/*
+ * Created by BILL.C.LI on 2016/8/23.
+ */
 
 const path = require('path');
 const fs = require('fs');
