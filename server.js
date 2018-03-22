@@ -5,7 +5,7 @@
 "use strict";
  
 const path = require('path');
-const panic = require('./node_modules/nodepanic');
+const panic = require('nodepanic');
 const webServer = require('./src/webServer.js');
  
 var currentFile = path.basename(__filename);

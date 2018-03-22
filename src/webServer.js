@@ -7,10 +7,10 @@
 const path = require('path');
 const http = require('http');
 const index = require('../routes/index.js');
-const logger = require('../node_modules/morgan');
-const cookieParser = require('../node_modules/cookie-parser');
-const bodyParser = require('../node_modules/body-parser');
-const express = require('../node_modules/express');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const express = require('express');
 
 function WebServer() {
 	this.express = null;
